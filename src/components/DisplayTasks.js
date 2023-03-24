@@ -33,12 +33,37 @@ const DisplayTasks = ({ file }) => {
 		// This method runs when the dragging stops
 		console.log(e.target.textContent);
 		console.log("Ended");
-    
-    console.log(bools)
-    
-		
 
-		const targetSubTaskValue = e.target.textContent;
+    const targetSubTaskValue = e.target.textContent;
+
+		// for (let item of Object.keys(bools[0])) {
+		//     console.log(bools[0][item][1]);
+    //     // Object.values()
+		// }
+
+    const updatedTasks = {...tasks}
+
+    for (const taskName of Object.keys(updatedTasks)) {
+      const subTasks = updatedTasks[taskName];
+
+      for (const subTask of subTasks) {
+        const subTaskName = Object.keys(subTask)[0];
+        const subTaskValue = Object.values(subTask)[0];
+        // console.log(subTaskName)
+        console.log(subTask[subTaskName])
+        if (true) {
+          subTask[subTaskName] = !subTaskValue;
+          // setTasks(updatedTasks)
+        }
+        setTasks(updatedTasks);
+      }     
+      return updatedTasks;
+    }
+    setTasks(updatedTasks)
+    
+
+
+		
 
     // console.log(bools);
 
