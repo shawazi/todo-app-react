@@ -1,0 +1,17 @@
+{
+    "Study React": [
+      { "Study State and Props": true },
+      { "Study Context": false },
+      { "Develop Recipe App": false }
+    ],
+    "Prepare Dinner": [
+      { "Go shopping and buy items needed": true },
+      { "Check the recipe": false },
+      { "Do cooking": false }
+    ],
+    "Do House Cleaning": [
+      { "Clean Kitchen": false },
+      { "Clean Bathroom": false },
+      { "Clean Living Room": false }
+    ]
+}

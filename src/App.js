@@ -1,24 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import { Container } from 'react-bootstrap';
+import Input from "./components/Input";
+import DisplayTasks from './components/DisplayTasks';
+
+// min-vh-100 d-flex justify-content-center align-items-center
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="d-flex flex-column text-center align-items-center mt-5 border border-dark gap-3">
+      <h1 className='main-heading'>Shawaz's To Do List</h1>
+      <Input /> 
+      <DisplayTasks />
+    </Container>
   );
 }
 
