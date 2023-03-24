@@ -20,7 +20,7 @@ const Input = ({ file, setFile }) => {
       fileReader.readAsText(e.target.files[0], "UTF-8");
       fileReader.onload = (e) => {
         setFile(e.target.result);
-        console.log(e.target.result);
+        // console.log(e.target.result);
 
       };
       

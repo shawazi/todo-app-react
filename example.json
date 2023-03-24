@@ -1,6 +1,12 @@
 {
     "Study React": [
       { "Study State and Props": true },
+      { "Study State and Props": true },
+      { "Study State and Props": true },
+      { "Study State and Props": true },
+      { "Study State and Props": true },
+      { "Study State and Props": true },
+      { "Study State and Props": true },
       { "Study Context": false },
       { "Develop Recipe App": false }
     ],
@@ -10,6 +16,31 @@
       { "Do cooking": false }
     ],
     "Do House Cleaning": [
+      { "Clean Kitchen": false },
+      { "Clean Bathroom": false },
+      { "Clean Living Room": false }
+    ],
+    "Do Houtse Cleaning": [
+      { "Clean Kitchen": false },
+      { "Clean Bathroom": false },
+      { "Clean Living Room": false }
+    ],
+    "Do Horuse Cleaning": [
+      { "Clean Kitchen": false },
+      { "Clean Bathroom": false },
+      { "Clean Living Room": false }
+    ],
+    "Do Hoause Cleaning": [
+      { "Clean Kitchen": false },
+      { "Clean Bathroom": false },
+      { "Clean Living Room": false }
+    ],
+    "Do Housfe Cleaning": [
+      { "Clean Kitchen": false },
+      { "Clean Bathroom": false },
+      { "Clean Living Room": false }
+    ],
+    "Do Hoduse Cleaning": [
       { "Clean Kitchen": false },
       { "Clean Bathroom": false },
       { "Clean Living Room": false }
