@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 
+
+// I need to 1. make draggable elements; 2. event handler that changes boolean value of dragged element to !currentBoolean onDragEnd; 3. display conditional that displays a visual indicator in "complete" or "incomplete" column depending on currentBoolean value of the dragged element
+
+
 const DisplayTasks = ({ file }) => {
 	const [tasks, setTasks] = useState({});
 
@@ -35,47 +39,30 @@ const DisplayTasks = ({ file }) => {
 		console.log("Ended");
 
     const targetSubTaskValue = e.target.textContent;
-
-		// for (let item of Object.keys(bools[0])) {
-		//     console.log(bools[0][item][1]);
-    //     // Object.values()
-		// }
-
     const updatedTasks = {...tasks}
-
-    for (const taskName of Object.keys(updatedTasks)) {
-      const subTasks = updatedTasks[taskName];
-
-      for (const subTask of subTasks) {
-        const subTaskName = Object.keys(subTask)[0];
-        const subTaskValue = Object.values(subTask)[0];
-        // console.log(subTaskName)
-        console.log(subTask[subTaskName])
-        if (true) {
-          subTask[subTaskName] = !subTaskValue;
-          // setTasks(updatedTasks)
-        }
-        setTasks(updatedTasks);
-      }     
-      return updatedTasks;
-    }
-    setTasks(updatedTasks)
-    
-
-
-		
 
     // console.log(bools);
 
-		// setTasks((prev) => {
-		// 	const newTasks = { ...prev };
-		// 	Object.entries(newTasks).forEach(([taskName, taskData]) => {
-    //     Object.entries(taskData).forEach(([subtaskName, something]) => {
-    //       const [subtaskProp, subtaskVal] = Object.entries(something)[0];
-    //       console.log(subtaskProp, subtaskVal, subtaskName, something, taskName, taskData)
-    //     })
-    //   })
-		// });
+    // console.log(Object.values(updatedTasks))
+    for (const taskName of Object.values(updatedTasks)) {
+      console.log(taskName);
+      for (const subTask in taskName) {
+        console.log(taskName[subTask]);
+        for (const completion of subTask) {
+          // console.log(taskName[subTask]);
+          const subTaskName = Object.keys(taskName[subTask])
+          const subTaskValue = Object.values(taskName[subTask])
+
+          // console.log(completion)
+          console.log(subTaskName[0], subTaskValue[0])
+          if (true) {
+            taskName[subTask][subTaskName] = !taskName[subTask][subTaskValue];
+            // console.log(taskName[subTask][subTaskName])
+          }
+        }
+      }
+    }
+    setTasks(updatedTasks);
 	};
 
 	return (
@@ -105,18 +92,12 @@ const DisplayTasks = ({ file }) => {
 											Object.entries(status)[0];
 										return (
 											<tr key={subtaskIndex}>
-												<td
-													draggable
-													onDragStart={
-														handleDragStart
-													}
-													onDrag={handleDrag}
-													onDragEnd={handleDragEnd}
-												>
+												<td>
 													{subtaskName}
 												</td>
 												{subtaskStatus ? (
 													<td
+                            id={Math.random()}
 														draggable
 														onDragStart={
 															handleDragStart
@@ -126,12 +107,13 @@ const DisplayTasks = ({ file }) => {
 															handleDragEnd
 														}
 													>
-														{JSON.stringify(
+														{/* {JSON.stringify(
 															subtaskStatus
-														)}
+														)} */}
 													</td>
 												) : (
 													<td
+                            id={Math.random()}
 														draggable
 														onDragStart={
 															handleDragStart
@@ -140,10 +122,11 @@ const DisplayTasks = ({ file }) => {
 														onDragEnd={
 															handleDragEnd
 														}
-													></td>
+													>X</td>
 												)}
 												{!subtaskStatus ? (
 													<td
+                            id={Math.random()}
 														draggable
 														onDragStart={
 															handleDragStart
@@ -153,12 +136,13 @@ const DisplayTasks = ({ file }) => {
 															handleDragEnd
 														}
 													>
-														{JSON.stringify(
+														{/* {JSON.stringify(
 															subtaskStatus
-														)}
+														)} */}
 													</td>
 												) : (
 													<td
+                            id={Math.random()}
 														draggable
 														onDragStart={
 															handleDragStart
@@ -167,7 +151,7 @@ const DisplayTasks = ({ file }) => {
 														onDragEnd={
 															handleDragEnd
 														}
-													></td>
+													>X</td>
 												)}
 											</tr>
 										);
